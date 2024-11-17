@@ -87,8 +87,8 @@ main {
 	width: 100%; /* Убедитесь, что футер занимает всю ширину */
 	padding: 1rem; /* Добавьте отступы, если нужно */
 	box-sizing: border-box; /* Учитываем отступы в высоте */
-	height: 20vh;
-	min-height: 120px; /* Минимальная высота футера */
+	height: 10vh;
+	min-height: 30px; /* Минимальная высота футера */
 }
 
 	.footer .column {
@@ -101,16 +101,8 @@ main {
 	}
 
 	.footer label {
-		margin-top: 15px; 
+		margin-top: 15px;
+		color: white; /* Цвет текста в футере */
+		font-size: 1rem; /* Размер шрифта */
+		text-align: center; /* Центрирование текста */
 	}
-
-.logo img {
-	width: 120px; /* Ширина логотипа */
-	height: auto; /* Автоматическая высота для сохранения пропорций */
-}
-
-.footer label {
-	color: white; /* Цвет текста в футере */
-	font-size: 1rem; /* Размер шрифта */
-	text-align: center; /* Центрирование текста */
-}
