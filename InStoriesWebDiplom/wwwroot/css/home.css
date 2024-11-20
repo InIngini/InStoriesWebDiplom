@@ -1,8 +1,55 @@
 ﻿.home {
+	height: 80vh; /* Задаем высоту родительского контейнера (100% высоты окна) */
+}
+
+.video-background {
+	position: relative;
+	height: 80vh; /* Высота блока видео */
+	overflow: hidden;
+}
+
+.background-gif {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	transform: translate(-50%, -50%);
+}
+
+.overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	background-color: rgba(202, 15, 145, 0.7); /* Полупрозрачный фон */
+	padding: 20px;
+	border-radius: 10px; /* Закругленные углы */
+}
+
+	.overlay h1 {
+		color: white; /* Белый цвет текста */
+		margin: 0;
+	}
+
+	.overlay button {
+		margin-top: 1rem;
+		background-color: rgba(202, 15, 145); /* Цвет кнопки */
+		color: white; /* Цвет текста кнопки */
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+.newscat {
+	margin-top: 5rem;
 	display: flex; /* Используем flexbox для компоновки */
 	align-items: center; /* Центрируем элементы по вертикали */
 	justify-content: center; /* Центрируем элементы по горизонтали */
-	height: 80vh; /* Задаем высоту родительского контейнера (100% высоты окна) */
 }
 
 .news {
@@ -10,11 +57,14 @@
 	border-radius: 10px; /* Закругленные углы */
 	padding: 20px; /* Отступ внутри блока новостей */
 	width: 100%; /* Занимаем полную ширину блока */
-	max-width: 250px; /* Устанавливаем максимальную ширину */
-	height: 250px; /* Устанавливаем фиксированную высоту, равную высоте гифки */
+	max-width: 350px; /* Устанавливаем максимальную ширину */
+	height: 350px; /* Устанавливаем фиксированную высоту */
 	position: relative; /* Относительное позиционирование для абсолютных дочерних элементов */
 }
 
+.news-content {
+	margin: 40px;
+}
 	.news h1 {
 		color: #fff; /* Белый цвет текста */
 		font-size: 1.5rem; /* Размер шрифта для заголовка */
@@ -27,6 +77,8 @@
 		line-height: 1.5; /* Высота строки для удобочитаемости */
 	}
 
+
+
 #date {
 	position: absolute; /* Абсолютное позиционирование для даты внутри блока новостей */
 	bottom: 10px; /* Расстояние от нижнего края */
@@ -35,12 +87,40 @@
 	font-size: 0.875rem; /* Размер шрифта для даты */
 }
 
+.nav-button {
+	background-color: rgba(255, 255, 255, 0.4); /* Полупрозрачный белый фон */
+	border: none; /* Убираем рамку */
+	cursor: pointer; /* Указатель при наведении */
+	font-size: 24px; /* Размер шрифта для стрелок */
+	border-radius: 50%; /* Закругленные кнопки */
+	width: 40px; /* Ширина кнопки */
+	height: 40px; /* Высота кнопки */
+	position: absolute; /* Абсолютное позиционирование */
+	display: flex; /* Flex для центрирования содержимого */
+	align-items: center; /* Вертикальное центрирование */
+	justify-content: center; /* Горизонтальное центрирование */
+}
+
+#prev {
+	left: 10px; /* Положение кнопки влево */
+	top: 50%; /* Положение по вертикали */
+	transform: translateY(-50%); /* Центрируем по вертикали */
+}
+
+#next {
+	right: 10px; /* Положение кнопки вправо */
+	top: 50%; /* Положение по вертикали */
+	transform: translateY(-50%); /* Центрируем по вертикали */
+}
+
+
 .gif-container {
 	display: flex; /* Используем flexbox для контейнера с гифкой */
 	align-items: center; /* Центрируем гифку по вертикали */
+	margin-top:100px;
 	width: 100%; /* Занимаем полную ширину контейнера */
 	max-width: 250px; /* Устанавливаем максимальную ширину */
-	height: 450px; /* Устанавливаем фиксированную высоту, равную высоте блока новостей */
+	height: 350px; /* Устанавливаем фиксированную высоту, равную высоте блока новостей */
 }
 
 	.gif-container img {
