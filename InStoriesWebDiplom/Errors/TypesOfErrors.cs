@@ -12,7 +12,7 @@
         /// <param name="objName">Название объекта, который не найден.</param>
         /// <param name="genderOrNumber">Род или число, чтобы склонять сообщение (0 - ж род, 1 - м род, 2 - ср род, 3 - мн число).</param>
         /// <returns>Строка с пояснением ошибки.</returns>
-        public static string NotFoundById(string objName,int genderOrNumber)
+        public static string NotFoundById(string objName, int genderOrNumber)
         {
             switch (genderOrNumber)
             {
@@ -20,9 +20,9 @@
                 case 1: return $"{objName} не найден.";  //м род, ед число 
                 case 2: return $"{objName} не найдено."; //ср род, ед число
                 case 3: return $"{objName} не найдены."; //мн число
-                default: return $"Объект не найден."; 
+                default: return $"Объект не найден.";
             }
-            
+
         }
 
         /// <summary>

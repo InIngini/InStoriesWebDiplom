@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using System;
-using InStoriesWebDiplom.Errors;
+﻿using InStoriesWebDiplom.Errors;
 
 namespace InStoriesWebDiplom
 {
