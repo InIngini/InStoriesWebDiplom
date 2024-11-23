@@ -11,6 +11,8 @@
 }
 
 .book-list {
+	margin-left: 1rem;
+	margin-right: 1rem;
 	display: flex; /* Use flexbox for better responsiveness */
 	flex-direction: row;
 	flex-wrap: wrap; /* Wrap items to multiple rows if needed */
@@ -21,12 +23,13 @@
 
 .book-item {
 	width: 200px;
-	margin: 30px; /* Уменьшен отступ для лучшего расположения */
+	margin: 50px; /* Уменьшен отступ для лучшего расположения */
 	border: 1px solid #ddd;
 	border-radius: 10px;
 	overflow: hidden;
-	box-shadow: -10px 10px rgba(178, 128, 254, 0.9);
+	box-shadow: -12px 12px rgba(178, 128, 254, 0.9);
 	position: relative; /* Для позиционирования элементов */
+	cursor: pointer;
 }
 
 .book-cover {
@@ -47,8 +50,8 @@
 	position: fixed; /* Изменено на fixed для фиксированного позиционирования */
 	width: 3rem;
 	height: 3rem;
-	bottom: 20px; /* Расстояние от нижнего края */
-	right: 20px; /* Расстояние от правого края */
+	bottom: 90px; /* Расстояние от нижнего края */
+	right: 50px; /* Расстояние от правого края */
 	background-color: #B280FE;
 	border-radius: 50%;
 	cursor: pointer;

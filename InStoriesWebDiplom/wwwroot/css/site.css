@@ -88,9 +88,9 @@ main {
 	position: fixed; /* Изменено на fixed для фиксированного позиционирования */
 	width: 3rem;
 	height: 3rem;
-	bottom: 20px; /* Расстояние от нижнего края */
-	right: 20px; /* Расстояние от правого края */
-	background-color: #B280FE;
+	bottom: 30px; /* Расстояние от нижнего края */
+	right: 50px; /* Расстояние от правого края */
+	background-color: #CA0F91;
 	border-radius: 50%;
 	cursor: pointer;
 	display: flex; /* Добавлено для центрирования содержимого */

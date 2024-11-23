@@ -42,7 +42,7 @@ function addBook(title, cover) {
 
 // Обработчик события для кнопки "плюс"
 document.getElementById('plus').addEventListener('click', () => {
-    
+    window.location.href = '/functionbook';
 });
 
 // Проходим по массивам и добавляем книги в список
