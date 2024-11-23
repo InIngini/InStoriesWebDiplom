@@ -1,5 +1,5 @@
 ﻿.home {
-	height: 80vh; /* Задаем высоту родительского контейнера (100% высоты окна) */
+	min-height: 80vh; /* Задаем высоту родительского контейнера (100% высоты окна) */
 }
 
 .video-background {
@@ -25,24 +25,27 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	background-color: rgba(202, 15, 145, 0.7); /* Полупрозрачный фон */
+	background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
 	padding: 20px;
 	border-radius: 10px; /* Закругленные углы */
 }
 
 	.overlay h1 {
-		color: white; /* Белый цвет текста */
+		color: #B280FE; /* Белый цвет текста */
+		text-shadow: 0px 1px 1px black;
 		margin: 0;
 	}
 
 	.overlay button {
 		margin-top: 1rem;
-		background-color: rgba(202, 15, 145); /* Цвет кнопки */
+		border: 5px solid #B280FE;
+		background-color: #B280FE;
 		color: white; /* Цвет текста кнопки */
 		padding: 10px 20px;
 		border: none;
 		border-radius: 5px;
 		cursor: pointer;
+		text-shadow: 0px 1px 1px black;
 	}
 
 .newscat {

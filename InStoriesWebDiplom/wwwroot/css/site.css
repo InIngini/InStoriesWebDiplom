@@ -4,6 +4,8 @@ html, body {
 	width: 100%;
 	display: flex;
 	flex-direction: column; /* Вертикальное выравнивание */
+	overflow: auto;
+	position: relative;
 }
 
 .header {
@@ -79,26 +81,29 @@ main {
 	width: 100%;
 	min-height: 90vh;
 	overflow: auto; /* Позволяет прокручивать содержимое, если оно превышает высоту */
+	position: relative;
 }
-
 
 #question {
-	position: absolute;
+	position: fixed; /* Изменено на fixed для фиксированного позиционирования */
 	width: 3rem;
 	height: 3rem;
-	bottom: 50px;
-	right: 50px; /* Смещение от правого края для лучшего расположения */
-	background-color: #CA0F91;
+	bottom: 20px; /* Расстояние от нижнего края */
+	right: 20px; /* Расстояние от правого края */
+	background-color: #B280FE;
 	border-radius: 50%;
-	cursor: pointer; /* Указатель для интерактивного элемента */
-	align-items: center; /* Центрируем элементы по горизонтали */
-	justify-content: center; /* Центрируем элементы по вертикали */
+	cursor: pointer;
+	display: flex; /* Добавлено для центрирования содержимого */
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
 }
+
 
 	#question p {
 		color: #fff;
 		font-size: 2rem; /* Размер шрифта */
-		margin: 0.5rem 0 0 1rem;
+		margin: 0;/*.5rem 0 0 1rem;*/
 	}
 
 .footer {
