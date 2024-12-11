@@ -40,64 +40,105 @@ let questions = {
 
 // Пример данных персонажа
 let characterData = {
-    icon: "~/images/avatar.png", // путь к изображению
-    name: "Имя персонажа",
-    details: {
-        1: {
-            nickname: "Прозвище",
-            birthDate: "2000-01-01",
-            zodiacSign: "Козерог"
-        },
-        2: {
-            hairColor: "Брюнет",
-            eyeColor: "Карие",
-            height: "180 см"
-        },
-        3: {
-            traits: "Доброта, Ум, Смелость",
-            strengths: "Храбрость",
-            weaknesses: "Импульсивность"
-        },
-        4: {
-            history: "Краткая история персонажа...",
-            lifeEvents: "Важные события..."
-        },
-        5: {
-            achievements: "Значимые достижения...",
-            events: "События, которые повлияли..."
-        },
-        6: {
-            images: ["img1.png", "img2.png"]
+    "1": {
+        icon: "/images/avatar.png", // путь к изображению
+        name: "Имя персонажа",
+        details: {
+            1: {
+                nickname: "Прозвище",
+                birthDate: "2000-01-01",
+                zodiacSign: "Козерог"
+            },
+            2: {
+                hairColor: "Брюнет",
+                eyeColor: "Карие",
+                height: "180 см"
+            },
+            3: {
+                traits: "Доброта, Ум, Смелость",
+                strengths: "Храбрость",
+                weaknesses: "Импульсивность"
+            },
+            4: {
+                history: "Краткая история персонажа...",
+                lifeEvents: "Важные события..."
+            },
+            5: {
+                achievements: "Значимые достижения...",
+                events: "События, которые повлияли..."
+            },
+            6: {
+                images: ["img1.png", "img2.png"]
+            }
         }
     }
 };
 
+let character = {
+    "1": {
+        icon: "/images/avatar.png", // путь к изображению
+        name: "Имя персонажа"
+    }
+};
+
+
 // Функция для заполнения данных о персонаже
-function fillCharacterData() {
-    // Заполняем иконку и имя персонажа
-    document.getElementById('icon').src = characterData.icon;
-    document.getElementById('namecharacter').innerText = characterData.name;
+function loadCharacterData() {
+    for (let key in characterData) {
+        const character = characterData[key];
 
-    // Заполняем блоки
-    let blocksList = document.querySelector('.blocks-list');
-    for (let i = 1; i <= Object.keys(blocks).length; i++) {
-        let blockDiv = document.createElement('div');
-        blockDiv.classList.add('block');
-        blockDiv.innerHTML = `<h3>${blocks[i]}</h3>`;
+        // Заполняем иконку и имя персонажа
+        document.getElementById('icon').src = character.icon;
+        document.getElementById('namecharacter').innerText = character.name;
 
-        // Заполняем вопросы и ответы
-        let questionList = document.createElement('ul');
-        questions[i].forEach((question, index) => {
-            let listItem = document.createElement('li');
-            let answer = characterData.details[i][Object.keys(characterData.details[i])[index]];
-            listItem.innerText = `${question}: ${answer || 'Нет данных'}`;
-            questionList.appendChild(listItem);
-        });
+        // Заполняем блоки
+        let blocksList = document.querySelector('.character-blocks-list');
+        // Предполагаем, что blocks — это объект с ключами и массивами значений
+        for (let i = 1; i <= Object.keys(blocks).length; i++) {
+            let blockDiv = document.createElement('div');
+            blockDiv.classList.add('block');
+            blockDiv.innerHTML = `<h3>${blocks[i]}</h3>`; // Используем обратные кавычки для интерполяции
 
-        blockDiv.appendChild(questionList);
-        blocksList.appendChild(blockDiv);
+            // Создаем список вопросов и ответов
+            let questionList = document.createElement('ul');
+            questions[i].forEach((question, index) => {
+                let listItem = document.createElement('li');
+                let answer = character.details[i][Object.keys(character.details[i])[index]];
+                listItem.innerText = `${question}: ${answer || 'Нет данных'}`; // Используем обратные кавычки для интерполяции
+                questionList.appendChild(listItem);
+            });
+
+            blockDiv.appendChild(questionList);
+            blocksList.appendChild(blockDiv);
+        }
     }
 }
 
-// Вызываем функцию для заполнения данных при загрузке страницы
-window.onload = fillCharacterData;
+
+function loadCharacter() {
+    let characterListDiv = document.querySelector('.character-list');
+
+    // Проходим по всем персонажам в объекте character
+    for (let key in character) {
+        const charData = character[key];
+
+        // Создаем элемент для персонажа
+        const characterDiv = document.createElement('div');
+        characterDiv.classList.add('character');
+
+        // Заполняем содержимое элемента
+        characterDiv.innerHTML = `
+            <img src="${charData.icon}" alt="${charData.name}" class="character-icon"> <!-- Иконка персонажа -->
+            <h2 class="character-name">${charData.name}</h2> <!-- Имя персонажа -->
+        `;
+
+        // Добавляем элемент персонажа в список
+        characterListDiv.appendChild(characterDiv);
+    }
+}
+
+// Подключение к загрузке страницы
+document.addEventListener('DOMContentLoaded', function () {
+    loadCharacter();
+    loadCharacterData(); // Если у вас еще есть функция для заполнения данных
+});

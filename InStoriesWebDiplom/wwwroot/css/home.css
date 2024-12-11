@@ -6,6 +6,9 @@
 	position: relative;
 	height: 80vh; /* Высота блока видео */
 	overflow: hidden;
+	border-radius: 10px; /* Закругленные углы */
+	box-shadow: 0 5px 20px rgba(178, 128, 254, 1); /* Тень */
+	z-index: 1; /* Устанавливаем z-index для корректного размещения тени */
 }
 
 .background-gif {
@@ -28,11 +31,13 @@
 	background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
 	padding: 20px;
 	border-radius: 10px; /* Закругленные углы */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Тень */
+	z-index: 1; /* Устанавливаем z-index для корректного размещения тени */
 }
 
 	.overlay h1 {
-		color: #B280FE; /* Белый цвет текста */
-		text-shadow: 0px 1px 1px black;
+		color: #161519; /* Белый цвет текста */
+		/*text-shadow: 0px 1px 1px black;*/
 		margin: 0;
 	}
 
@@ -63,6 +68,9 @@
 	max-width: 350px; /* Устанавливаем максимальную ширину */
 	height: 350px; /* Устанавливаем фиксированную высоту */
 	position: relative; /* Относительное позиционирование для абсолютных дочерних элементов */
+
+	box-shadow: 0 0px 10px rgba(0,0,0, 1); /* Тень */
+	z-index: 1; /* Устанавливаем z-index для корректного размещения тени */
 }
 
 .news-content {

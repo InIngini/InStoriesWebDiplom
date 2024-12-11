@@ -15,6 +15,9 @@ html, body {
 	align-items: center; /* Вертикальное выравнивание по центру */
 	height: 5vh;
 	min-height: 30px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Тень */
+	position: relative; /* Для более сложных эффектов, если необходимо */
+	z-index: 1; /* Устанавливаем z-index для корректного размещения тени */
 }
 
 	.header div{
