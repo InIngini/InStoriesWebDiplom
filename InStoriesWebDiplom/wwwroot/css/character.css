@@ -25,7 +25,7 @@
 .character-item {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Отступ между иконкой и именем */
+    gap: 3px; /* Отступ между иконкой и именем */
     cursor: pointer;
     background-color: #383838;
     padding: 1rem; /* Отступы в rem */
